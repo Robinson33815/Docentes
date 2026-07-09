@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+<div class="text-center py-4 bg-white rounded shadow-sm">
+    <h1 class="display-5">Sistema de Gestión Académica</h1>
+    <p class="lead text-muted">Práctica de Desarrollo Web con Django y PostgreSQL</p>
+</div>
+
+<h3 class="text-center mt-4">Integrantes del Grupo</h3>
+<div class="row mt-3 justify-content-center">
+    <div class="col-md-2 col-6 mb-3">
+        <div class="card h-100 shadow-sm text-center">
+            <img src="{% static 'img/integrante1.jpg' %}" class="card-img-top foto-integrante" alt="Integrante 1">
+            <div class="card-body p-2">
+                <strong>Kevin Jaretd Briones Suarez</strong>
+                <p class="small mb-0">Nivel: 6to<br>kbrioness@unemi.edu.ec</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6 mb-3">
+        <div class="card h-100 shadow-sm text-center">
+            <img src="{% static 'img/integrante2.jpg' %}" class="card-img-top foto-integrante" alt="Integrante 2">
+            <div class="card-body p-2">
+                <strong>Henry Adrian Gomez Pin</strong>
+                <p class="small mb-0">Nivel: 6to<br>hgomezp2@unemi.edu.ec</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6 mb-3">
+        <div class="card h-100 shadow-sm text-center">
+            <img src="{% static 'img/integrante3.jpg' %}" class="card-img-top foto-integrante" alt="Integrante 3">
+            <div class="card-body p-2">
+                <strong>Lissette Yomaira Aguirre Parraga</strong>
+                <p class="small mb-0">Nivel: 6to<br>laguirrep@unemi.edu.ec</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6 mb-3">
+        <div class="card h-100 shadow-sm text-center">
+            <img src="{% static 'img/integrante4.jpg' %}" class="card-img-top foto-integrante" alt="Integrante 4">
+            <div class="card-body p-2">
+                <strong>Robinson Xavier Sarabia Acevedo</strong>
+                <p class="small mb-0">Nivel: 6to<br>rsarabiaa@unemi.edu.ec</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6 mb-3">
+        <div class="card h-100 shadow-sm text-center">
+            <img src="{% static 'img/integrante5.jpg' %}" class="card-img-top foto-integrante" alt="Integrante 5">
+            <div class="card-body p-2">
+                <strong>Edis Yamil Barba Cortez</strong>
+                <p class="small mb-0">Nivel: 6to<br>ebarbac@unemi.edu.ec</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <h3>👨‍🏫 Docentes</h3>
+                <p>Ubica aquí una descripción general sobre los docentes y su experiencia.</p>
+                <a href="/docentes/" class="btn btn-primary">Ver docentes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <h3>📚 Cursos</h3>
+                <p>Ubica aquí una descripción general sobre los cursos disponibles.</p>
+                <a href="/materias/" class="btn btn-success">Ver cursos</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
