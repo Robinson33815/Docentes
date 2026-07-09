@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block titulo %}Cursos{% endblock %}
+{% block contenido %}
+<h2 class="text-center">CURSOS OFERTADOS</h2>
+<div class="text-end mb-3">
+    <a href="{% url 'crear_curso' %}" class="btn btn-dark">➕ Agregar Curso</a>
+</div>
+
+<div class="row">
+    {% for c in cursos %}
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="card-title fw-bold mb-1">{{ c.nombre }}</h5>
+                        <p class="text-muted mb-2">{{ c.docente }}</p>
+                    </div>
+                    {% if c.imagen %}
+                    <img src="{{ c.imagen.url }}" class="foto-curso rounded border" alt="{{ c.nombre }}">
+                    {% else %}
+                    <div class="foto-curso d-flex align-items-center justify-content-center bg-secondary text-white rounded small">Sin imagen</div>
+                    {% endif %}
+                </div>
+                <p class="card-text small mb-1"><strong>Créditos:</strong> {{ c.creditos }}</p>
+                <p class="card-text small mb-1"><strong>Nivel:</strong> {{ c.nivel }}</p>
+                <p class="card-text small mb-1"><strong>Horas:</strong> {{ c.horas }}</p>
+                <p class="card-text small mb-3"><strong>Jornada:</strong> {{ c.jornada }}</p>
+                <div class="text-end">
+                    <a href="{% url 'editar_curso' c.pk %}" class="btn btn-warning btn-sm" title="Editar">✏️</a>
+                    <a href="{% url 'eliminar_curso' c.pk %}" class="btn btn-danger btn-sm" title="Eliminar">🗑️</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No hay cursos registrados.</p>
+    {% endfor %}
+</div>
+{% endblock %}
